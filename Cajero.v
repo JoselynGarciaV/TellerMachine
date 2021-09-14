@@ -86,7 +86,7 @@ monto_ingresado = in_switch;
         end
 
 
-// Para desplegar los valores de contraseña y montos 
+// Para desplegar los valores de contraseÃ±a y montos 
 case (display)
        4'b0000 : catodo = 7'b0000001;
        4'b0001 : catodo = 7'b1001111;
@@ -109,7 +109,7 @@ endcase
   
                   
 case(state)
-        0: //Estado Cero, ingresa contraseña y verifica  
+        0: //Estado Cero, ingresa contraseÃ±a y verifica  
         begin
         
             if(button [3] == 1)// reset
@@ -124,13 +124,13 @@ case(state)
                 numero_desple = 0;
                 state=0;            
             end
-            //Verifica contraseña
+            //Verifica contraseÃ±a
             if ((in_switch == 12'b000000001100) && (button[0]==1))
             begin
                 numero_desple = 12;//solo despliega el 12
             end
             
-            if((in_switch == 12'b000000001100) && (tiempo < 700000000) && (numero_desple==12) )// se mantiene por 7 segundos la contraseña
+            if((in_switch == 12'b000000001100) && (tiempo < 700000000) && (numero_desple==12) )// se mantiene por 7 segundos la contraseÃ±a
             tiempo = tiempo + 1;
             
             if((in_switch == 12'b000000001100) && (tiempo == 700000000))
@@ -144,7 +144,7 @@ case(state)
                 tiempo = 0;
             end
             
-            if ((in_switch == 12'b000000000000) && (button[1]==1) && (numero_desple == dinero_actual) ) //Todos los switches deben estar en cero y activar el botón de añadir
+            if ((in_switch == 12'b000000000000) && (button[1]==1) && (numero_desple == dinero_actual) ) //Todos los switches deben estar en cero y activar el botÃ³n de aÃ±adir
             begin
                 state = 1;
                 units = 0;
@@ -155,7 +155,7 @@ case(state)
                 numero_desple=0;
             end
             
-            if ((in_switch == 12'b000000000000) && (button[2]==1) && (numero_desple == dinero_actual) ) //Todos los switches deben estar en cero y activar el botón de añadir
+            if ((in_switch == 12'b000000000000) && (button[2]==1) && (numero_desple == dinero_actual) ) //Todos los switches deben estar en cero y activar el botÃ³n de aÃ±adir
             begin
                 state = 2;
                 units = 0;
